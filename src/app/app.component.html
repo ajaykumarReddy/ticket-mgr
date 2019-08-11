@@ -43,7 +43,7 @@
         <tr>
           <td>
             <a routerLink="/ticket/{{car.code}}" href="#">{{car.code}} </a></td>
-          <td [title]="car.email">{{car.email}}</td>
+          <td class="email-overflow" [title]="car.email">{{car.email}}</td>
           <td>{{car.phone}}</td>
           <td>{{car.start_date}}</td>
           <td>{{car.destinations}}</td>

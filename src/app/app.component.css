@@ -23,3 +23,10 @@
 p-dropdown {
     margin-right: 10px;
 }
+
+.email-overflow {
+      white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 150px;
+}
