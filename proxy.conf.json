@@ -1,5 +1,5 @@
 {
-    "/ticket-mgr": {
+    "/ticket-services": {
       "target": "http://35.236.108.81/",
       "secure": false,
       "changeOrigin": true

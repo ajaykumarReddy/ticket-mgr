@@ -1,0 +1,32 @@
+.container {
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+
+.filters {
+    margin-bottom: 20px;
+}
+.dropdown-container {
+    display: flex;
+}
+.status_green {
+    width: 20px;
+    vertical-align: middle;
+    height: 15px;
+    display: inline-block;
+    border: 1px solid lightslategrey;
+    border-radius: 4px;
+}
+p-dropdown {
+    margin-right: 10px;
+}
+
+.email-overflow {
+      white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 150px;
+}

@@ -11,11 +11,13 @@ import { FormsModule } from '@angular/forms';
 import {TooltipModule} from 'primeng/tooltip';
 import {MessageService} from 'primeng/api';
 import { TicketDetailsComponent } from './ticket-details/ticket-details.component';
+import { TicketListComponent } from './ticket-list/ticket-list.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    TicketDetailsComponent
+    TicketDetailsComponent,
+    TicketListComponent
   ],
   imports: [
     BrowserModule,

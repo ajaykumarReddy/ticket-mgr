@@ -16,7 +16,7 @@ export class HttpService {
     }
 
     getTicketsList(agent, status = 'N', priority = 'All') {
-        const apiURL: string = `ticket-mgr/rest/admin/get-ticket-list?agent=${agent}&status=${status}&priority=${priority}`;
+        const apiURL: string = `ticket-services/rest/admin/get-ticket-list?agent=${agent}&status=${status}&priority=${priority}`;
         return this.httpClient.get(apiURL, this.httpOptions);
     }
 
