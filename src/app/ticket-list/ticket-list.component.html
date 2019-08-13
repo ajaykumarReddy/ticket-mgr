@@ -44,7 +44,7 @@
             <ng-template pTemplate="body" let-car let-i="rowIndex">
                 <tr>
                     <td>
-                        <a routerLink="/ticket/{{car.code}}" href="#">{{car.code}} </a></td>
+                        <a [routerLink]="['/ticket', car.code]">{{car.code}} </a></td>
                     <td class="email-overflow" [title]="car.email">{{car.email}}</td>
                     <td>{{car.phone}}</td>
                     <td>{{car.start_date}}</td>

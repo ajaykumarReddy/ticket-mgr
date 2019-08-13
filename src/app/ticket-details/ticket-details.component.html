@@ -1,1 +1,21 @@
-<p>ticket-details works!</p>
+<div class="ticket-container">
+    <table id="customers" *ngIf="ticket">
+        <caption>Enquiry Code : {{enuiryCode}}</caption>
+        <tr>
+            <td>Budget : </td>
+            <td>Email : {{ticket.email}}</td>
+        </tr>
+        <tr>
+            <td>Phone : {{ticket.phone}}</td>
+            <td>From City : {{ticket.city}}</td>
+        </tr>
+        <tr>
+            <td>Trip Start Date: {{ticket.start_date | date}}</td>
+            <td>Trip Duration: {{ticket.duration}}</td>
+        </tr>
+        <tr>
+            <td>No. of Persons : {{ticket.adults}}</td>
+            <td>Destinations: {{ticket.destinations}}</td>
+        </tr>
+    </table>
+</div>

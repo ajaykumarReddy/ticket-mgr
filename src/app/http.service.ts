@@ -24,4 +24,9 @@ export class HttpService {
         const apiURL = `ticket-mgr/rest/admin/quick-ticket-update?id=IT16445227&status=Q&agent=blr03`;
         return this.httpClient.post(apiURL, payload, this.httpOptions);
     }
+
+    getTicketDetails(ticketCode) {
+        const uri = `ticket-services/rest/admin/get-ticket-details?id=${ticketCode}`;
+        return this.httpClient.get(uri, this.httpOptions);
+    }
 }
