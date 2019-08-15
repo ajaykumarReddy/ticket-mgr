@@ -1,4 +1,4 @@
-.container {
+.ticket_list_container {
     display: flex;
     height: 100%;
     flex-direction: column;
@@ -9,9 +9,11 @@
 .filters {
     margin-bottom: 20px;
 }
+
 .dropdown-container {
     display: flex;
 }
+
 .status_green {
     width: 20px;
     vertical-align: middle;
@@ -20,12 +22,13 @@
     border: 1px solid lightslategrey;
     border-radius: 4px;
 }
+
 p-dropdown {
     margin-right: 10px;
 }
 
 .email-overflow {
-      white-space: nowrap;
+    white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
     max-width: 150px;

@@ -1,21 +1,47 @@
 <div class="ticket-container">
-    <table id="customers" *ngIf="ticket">
-        <caption>Enquiry Code : {{enuiryCode}}</caption>
-        <tr>
-            <td>Budget : </td>
-            <td>Email : {{ticket.email}}</td>
-        </tr>
-        <tr>
-            <td>Phone : {{ticket.phone}}</td>
-            <td>From City : {{ticket.city}}</td>
-        </tr>
-        <tr>
-            <td>Trip Start Date: {{ticket.start_date | date}}</td>
-            <td>Trip Duration: {{ticket.duration}}</td>
-        </tr>
-        <tr>
-            <td>No. of Persons : {{ticket.adults}}</td>
-            <td>Destinations: {{ticket.destinations}}</td>
-        </tr>
-    </table>
+    <!-- <p-panel>
+        <p-header>
+            <div class="ui-helper-clearfix">
+                <span class="ui-panel-title" style="font-size:16px;display:inline-block;margin-top:2px">Ticket
+                    Details</span>
+                <p-splitButton [style]="{'float':'right'}" label="Save" icon="pi pi-check" (onClick)="save()"
+                    [model]="items"></p-splitButton> -->
+            <!-- </div> -->
+        <!-- </p-header> -->
+        <table id="customers" *ngIf="ticket">
+            <caption>Enquiry Code : {{enuiryCode}}</caption>
+            <tr>
+                <td><label class="td-label">Budget</label> : </td>
+                <td><label class="td-label">Email : </label>{{ticket.email}}</td>
+            </tr>
+            <tr>
+                <td><label class="td-label">Phone : </label>{{ticket.phone}}</td>
+                <td><label class="td-label">From City : </label>{{ticket.city}}</td>
+            </tr>
+            <tr>
+                <td><label class="td-label">Trip Start Date:</label> {{ticket.start_date | date}}</td>
+                <td><label class="td-label">Trip Duration: </label> {{ticket.duration}}</td>
+            </tr>
+            <tr>
+                <td><label class="td-label">No. of Persons : </label> {{ticket.adults}} Adults & {{ticket.children}}
+                    Children</td>
+                <td><label class="td-label">Destinations: </label> {{ticket.destinations}}</td>
+            </tr>
+            <tr>
+                <td colspan="2"><label class="td-label">Itinerary_link:</label> {{ticket.itinerary_link}}</td>
+            </tr>
+            <tr>
+                <td><label class="td-label">Accommodation Type: </label> {{ticket.accommodation}}</td>
+                <td><label class="td-label">Vehicle Type: </label> {{ticket.vehicle}}</td>
+            </tr>
+            <footer>
+                <button (click)="gotoTicketList()">Back</button>
+            </footer>
+        </table>
+        <!-- <p-footer>
+            Footer content here
+        </p-footer> -->
+    <!-- </p-panel> -->
+
+
 </div>

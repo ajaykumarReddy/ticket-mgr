@@ -1,22 +1,32 @@
 .ticket-container {
-    display: flex;
-    justify-content: center;
-    margin-top: 50px;
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  width: 100vw;
 }
 
 #customers td, #customers th {
     border: 1px solid #ddd;
     padding: 8px;
   }
-  
-  #customers tr:nth-child(even){background-color: #f2f2f2;}
+  #customers caption {
+    background-color: #585979;
+    color: #fff;
+    padding: 10px;
+  }
+  /* #customers tr:nth-child(even){background-color: #f2f2f2;} */
   
   #customers tr:hover {background-color: #ddd;}
   
-  #customers th {
+  /* #customers th {
     padding-top: 12px;
     padding-bottom: 12px;
     text-align: left;
     background-color: #4CAF50;
     color: white;
+  } */
+  .td-label {
+    font-weight: 500;
   }

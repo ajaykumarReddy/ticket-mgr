@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { HttpService } from '../http.service';
 
 @Component({
@@ -10,7 +10,7 @@ import { HttpService } from '../http.service';
 export class TicketDetailsComponent implements OnInit {
   enuiryCode: string;
   ticket: any;
-  constructor(private route: ActivatedRoute, private httpService: HttpService) { }
+  constructor(private route: ActivatedRoute, private httpService: HttpService,  private router: Router) { }
 
   ngOnInit() {
     this.route.paramMap.subscribe(params => {
@@ -21,6 +21,10 @@ export class TicketDetailsComponent implements OnInit {
         this.ticket = res;
       });
     });
+  }
+
+  gotoTicketList() {
+    this.router.navigate(['/ticketList']);
   }
 
 }

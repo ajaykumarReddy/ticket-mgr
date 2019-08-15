@@ -5,6 +5,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { TableModule } from 'primeng/table';
 import {ToastModule} from 'primeng/toast';
 import {DropdownModule} from 'primeng/dropdown';
+import {ButtonModule} from 'primeng/button';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { FormsModule } from '@angular/forms';
@@ -28,7 +29,8 @@ import { TicketListComponent } from './ticket-list/ticket-list.component';
     TableModule,
     DropdownModule,
     ToastModule,
-    TooltipModule
+    TooltipModule,
+    ButtonModule
   ],
   providers: [MessageService],
   bootstrap: [AppComponent]

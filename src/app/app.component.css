@@ -1,0 +1,25 @@
+nav {
+    display: block;
+    padding: 0;
+    height: 60px;
+    box-sizing: border-box;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 9997;
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, .3);
+    background-color: #FF9999;
+}
+
+.container {
+    position: absolute;
+    top: 70px;
+}
+
+.logo_img{
+    width: 200px;
+    height: 60px;
+    margin-left: 10px;
+    background-color: azure;
+}

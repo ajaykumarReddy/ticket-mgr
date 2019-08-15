@@ -1,4 +1,4 @@
-<div class="container">
+<div class="ticket_list_container">
     <div class="filters">
         <form>
             <div class="dropdown-container">
@@ -41,27 +41,27 @@
                     <th>Agent</th>
                 </tr>
             </ng-template>
-            <ng-template pTemplate="body" let-car let-i="rowIndex">
+            <ng-template pTemplate="body" let-ticket let-i="rowIndex">
                 <tr>
                     <td>
-                        <a [routerLink]="['/ticket', car.code]">{{car.code}} </a></td>
-                    <td class="email-overflow" [title]="car.email">{{car.email}}</td>
-                    <td>{{car.phone}}</td>
-                    <td>{{car.start_date}}</td>
-                    <td>{{car.destinations}}</td>
-                    <td>{{car.budget}}</td>
-                    <td>{{car.priority}}</td>
+                        <a [routerLink]="['/ticket', ticket.code]">{{ticket.code}} </a></td>
+                    <td class="email-overflow" [title]="ticket.email">{{ticket.email}}</td>
+                    <td>{{ticket.phone}}</td>
+                    <td>{{ticket.start_date}}</td>
+                    <td>{{ticket.destinations}}</td>
+                    <td>{{ticket.budget}}</td>
+                    <td>{{ticket.priority}}</td>
                     <td pEditableColumn>
                         <p-cellEditor>
                             <ng-template pTemplate="input">
                                 <p-dropdown name="status" [options]="statusVals"
-                                    (onChange)="statusChange($event, car, car.agent, car.status, i)"
-                                    [(ngModel)]="car.status" optionLabel="label" [style]="{'width':'100%'}">
+                                    (onChange)="statusChange($event, ticket, ticket.agent, ticket.status, i)"
+                                    [(ngModel)]="ticket.status" optionLabel="label" [style]="{'width':'100%'}">
                                 </p-dropdown>
                             </ng-template>
                             <ng-template pTemplate="output">
-                                <div class="status_green" [style.backgroundColor]="color_codes[car.status]"></div>
-                                {{car.status_text}}
+                                <div class="status_green" [style.backgroundColor]="color_codes[ticket.status]"></div>
+                                {{ticket.status_text}}
                             </ng-template>
                         </p-cellEditor>
                     </td>
@@ -69,12 +69,12 @@
                         <p-cellEditor>
                             <ng-template pTemplate="input">
                                 <p-dropdown [options]="agentsTable"
-                                    (onChange)="agentChange($event, car, car.newAgent, car.status, i)"
-                                    [(ngModel)]="car.newAgent" optionLabel="label" [style]="{'width':'100%'}">
+                                    (onChange)="agentChange($event, ticket, ticket.newAgent, ticket.status, i)"
+                                    [(ngModel)]="ticket.newAgent" optionLabel="label" [style]="{'width':'100%'}">
                                 </p-dropdown>
                             </ng-template>
                             <ng-template pTemplate="output">
-                                {{car.agent_name}}
+                                {{ticket.agent_name}}
                             </ng-template>
                         </p-cellEditor>
                     </td>

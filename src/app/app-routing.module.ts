@@ -6,7 +6,7 @@ import { TicketListComponent } from './ticket-list/ticket-list.component';
 
 
 const routes: Routes = [
-  { path: '', component: TicketListComponent },
+  { path: '',   redirectTo: '/ticketList', pathMatch: 'full' },
   { path: 'ticket/:ticketCode', component: TicketDetailsComponent },
   { path: 'ticketList', component: TicketListComponent }
 ];
