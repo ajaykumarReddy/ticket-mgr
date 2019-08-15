@@ -21,7 +21,7 @@ export class HttpService {
     }
 
     saveData(payload) {
-        const apiURL = `ticket-mgr/rest/admin/quick-ticket-update?id=IT16445227&status=Q&agent=blr03`;
+        const apiURL = `ticket-services/rest/admin/quick-ticket-update?id=IT16445227&status=Q&agent=blr03`;
         return this.httpClient.post(apiURL, payload, this.httpOptions);
     }
 

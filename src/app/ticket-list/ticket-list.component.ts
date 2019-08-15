@@ -12,7 +12,7 @@ export class TicketListComponent implements OnInit {
   cars: any[];
 
   cols: any[];
-
+  loading: boolean;
   ticket_list: any[];
   agents: any[];
   agentName: any;
@@ -25,9 +25,7 @@ export class TicketListComponent implements OnInit {
   constructor(private httpService: HttpService, private toastService: MessageService) { }
 
   ngOnInit() {
-
     this.color_codes = { N: '#FFFF00', Q: '#0000FF', R: '#FF6600', S: '#660000', W: '#009900', D: '#99FFCC', C: '#FF0000' };
-
     this.agents = [
       { label: 'All', value: 'all' },
       { label: 'Ashok', value: 'blr01' },
@@ -70,9 +68,11 @@ export class TicketListComponent implements OnInit {
   }
 
   getTicketData(agent, status?, priority?) {
+    this.loading = true;
     this.httpService.getTicketsList(agent, status, priority).subscribe((data: any) => {
       console.log('tickets data....', data);
       this.ticket_list = data.ticket_list;
+      this.loading = false;
     });
   }
 
@@ -90,6 +90,8 @@ export class TicketListComponent implements OnInit {
         this.ticket_list.splice(index, 1);
       }
       this.toastService.add({ severity: 'success', summary: 'Success', detail: 'Ticke details updated' });
+    }, err=> {
+      this.toastService.add({severity:'error', summary: 'Error Message', detail:'updation failed'});
     });
   }
 
@@ -101,7 +103,11 @@ export class TicketListComponent implements OnInit {
       id: row.code,
       status: row.status
     };
-    this.httpService.saveData(payload).subscribe();
+    this.httpService.saveData(payload).subscribe(res => {
+      this.toastService.add({ severity: 'success', summary: 'Success', detail: 'Ticke details updated' });
+    }, err=> {
+      this.toastService.add({severity:'error', summary: 'Error Message', detail:'updation failed'});
+    });
   }
 
 }
