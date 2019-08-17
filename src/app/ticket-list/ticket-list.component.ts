@@ -7,10 +7,6 @@ import { HttpService } from '../http.service';
   styleUrls: ['./ticket-list.component.css']
 })
 export class TicketListComponent implements OnInit {
-
-  title = 'ticket-mgr';
-  cars: any[];
-
   cols: any[];
   loading: boolean;
   ticket_list: any[];
@@ -27,6 +23,7 @@ export class TicketListComponent implements OnInit {
   ngOnInit() {
     this.color_codes = { N: '#FFFF00', Q: '#0000FF', R: '#FF6600', S: '#660000', W: '#009900', D: '#99FFCC', C: '#FF0000' };
     this.agents = [
+      {label:'Select Agent', value:null},
       { label: 'All', value: 'all' },
       { label: 'Ashok', value: 'blr01' },
       { label: 'Chandu', value: 'blr02' },
@@ -37,6 +34,7 @@ export class TicketListComponent implements OnInit {
     ];
 
     this.agentsTable = [
+      {label:'Select Agent', value:null},
       { label: 'Ashok', value: 'blr01' },
       { label: 'Chandu', value: 'blr02' },
       { label: 'Dev', value: 'blr03' },
@@ -46,7 +44,9 @@ export class TicketListComponent implements OnInit {
 
     this.agentName = this.agents[0];
 
-    this.statusVals = [{ label: 'New', value: 'N' },
+    this.statusVals = [
+      {label:'Select Status', value:null},
+      { label: 'New', value: 'N' },
     { label: 'Quote Sent', value: 'Q' },
     { label: 'Reply From Customer', value: 'R' },
     { label: 'Sale', value: 'S' },
@@ -73,6 +73,9 @@ export class TicketListComponent implements OnInit {
       console.log('tickets data....', data);
       this.ticket_list = data.ticket_list;
       this.loading = false;
+    }, err => {
+      this.loading = false;
+      this.toastService.add({severity:'error', summary: 'Error Message', detail:'failed to load data'});
     });
   }
 

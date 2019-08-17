@@ -29,4 +29,9 @@ export class HttpService {
         const uri = `ticket-services/rest/admin/get-ticket-details?id=${ticketCode}`;
         return this.httpClient.get(uri, this.httpOptions);
     }
+
+    updateTicket(payload) {
+        const apiURL = `ticket-services/rest/admin/update-ticket`;
+        return this.httpClient.post(apiURL, payload, this.httpOptions);
+    }
 }

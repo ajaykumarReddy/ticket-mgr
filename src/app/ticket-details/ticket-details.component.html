@@ -1,47 +1,73 @@
 <div class="ticket-container">
-    <!-- <p-panel>
-        <p-header>
-            <div class="ui-helper-clearfix">
-                <span class="ui-panel-title" style="font-size:16px;display:inline-block;margin-top:2px">Ticket
-                    Details</span>
-                <p-splitButton [style]="{'float':'right'}" label="Save" icon="pi pi-check" (onClick)="save()"
-                    [model]="items"></p-splitButton> -->
-            <!-- </div> -->
-        <!-- </p-header> -->
-        <table id="customers" *ngIf="ticket">
-            <caption>Enquiry Code : {{enuiryCode}}</caption>
-            <tr>
-                <td><label class="td-label">Budget</label> : </td>
-                <td><label class="td-label">Email : </label>{{ticket.email}}</td>
-            </tr>
-            <tr>
-                <td><label class="td-label">Phone : </label>{{ticket.phone}}</td>
-                <td><label class="td-label">From City : </label>{{ticket.city}}</td>
-            </tr>
-            <tr>
-                <td><label class="td-label">Trip Start Date:</label> {{ticket.start_date | date}}</td>
-                <td><label class="td-label">Trip Duration: </label> {{ticket.duration}}</td>
-            </tr>
-            <tr>
-                <td><label class="td-label">No. of Persons : </label> {{ticket.adults}} Adults & {{ticket.children}}
-                    Children</td>
-                <td><label class="td-label">Destinations: </label> {{ticket.destinations}}</td>
-            </tr>
-            <tr>
-                <td colspan="2"><label class="td-label">Itinerary_link:</label> {{ticket.itinerary_link}}</td>
-            </tr>
-            <tr>
-                <td><label class="td-label">Accommodation Type: </label> {{ticket.accommodation}}</td>
-                <td><label class="td-label">Vehicle Type: </label> {{ticket.vehicle}}</td>
-            </tr>
-            <footer>
-                <button (click)="gotoTicketList()">Back</button>
-            </footer>
-        </table>
-        <!-- <p-footer>
-            Footer content here
-        </p-footer> -->
-    <!-- </p-panel> -->
+    <table id="customers" *ngIf="ticket">
+        <caption>Enquiry Code : {{enuiryCode}}</caption>
+        <tr>
+            <td>
+                <label class="td-label">Budget</label> :
+                <span *ngIf="!isEdit">{{ticket.budget}}</span>
+                <input *ngIf="isEdit" name="budget" type="text" [(ngModel)]="ticket.budget" pInputText>
+            </td>
+            <td>
+                <label class="td-label">Email : </label>
+                <span *ngIf="!isEdit">{{ticket.email}}</span>
+                <input *ngIf="isEdit" name="email" type="text" [(ngModel)]="ticket.email" pInputText>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label class="td-label">Phone : </label>
+                <span *ngIf="!isEdit">{{ticket.phone}} </span>
+                <input *ngIf="isEdit" name="email" type="text" [(ngModel)]="ticket.email" pInputText>
+            </td>
+            <td><label class="td-label">From City : </label>
+                <span *ngIf="!isEdit">{{ticket.city}}</span>
+                <input *ngIf="isEdit" name="city" type="text" [(ngModel)]="ticket.city" pInputText>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label class="td-label">Trip Start Date:</label>
+                <span *ngIf="!isEdit">{{ticket.start_date}}</span>
+                <input *ngIf="isEdit" name="startDate" type="date" [(ngModel)]="ticket.start_date" pInputText>
 
-
+            </td>
+            <td>
+                <label class="td-label">Trip Duration: </label>
+                <span *ngIf="!isEdit">{{ticket.duration}}</span>
+                <p-dropdown *ngIf="isEdit" [options]="duration" [(ngModel)]="ticket.duration"></p-dropdown>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label class="td-label">No. of Persons : </label>
+                <span>{{ticket.adults}} Adults & {{ticket.children}}Children </span>
+            </td>
+            <td><label class="td-label">Destinations: </label> {{ticket.destinations}}</td>
+        </tr>
+        <tr>
+            <td colspan="2"><label class="td-label">Itinerary_link:</label> {{ticket.itinerary_link}}</td>
+        </tr>
+        <tr>
+            <td>
+                <label class="td-label">Accommodation Type: </label>
+                <span *ngIf="!isEdit">{{ticket.accommodation}}</span>
+                <p-dropdown *ngIf="isEdit" [options]="accomidationTypes" [(ngModel)]="ticket.accommodation">
+                </p-dropdown>
+            </td>
+            <td>
+                <label class="td-label">Vehicle Type: </label>
+                <span *ngIf="!isEdit"> {{ticket.vehicle}} </span>
+                <p-dropdown *ngIf="isEdit" [options]="vehicleTypes" [(ngModel)]="ticket.vehicle"></p-dropdown>
+            </td>
+        </tr>
+        <footer>
+            <button pButton type="button" (click)="gotoTicketList()" label="Back"
+                class="ui-button-secondary ui-button-rounded" style="margin-right: 5px;"></button>
+            <button *ngIf="!isEdit" (click)="isEdit=true;" pButton type="button" label="Edit"></button>
+            <button *ngIf="isEdit" (click)="saveTicketDetails(ticket); isEdit = false;" pButton type="button"
+                label="Save" class="ui-button-rounded"></button>
+        </footer>
+    </table>
 </div>
+
+<p-toast [style]="{marginTop: '80px'}"></p-toast>

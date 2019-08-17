@@ -5,6 +5,7 @@
     margin: 0;
     padding: 0;
 }
+
 body {
     height: 100vh;
     font-family: 'Roboto', sans-serif;
@@ -17,13 +18,17 @@ body {
     max-width: 150px;
   } */
 
-  /* .ui-table table {
+/* .ui-table table {
     table-layout:auto !important;
 } */
 
-body .ui-table .ui-table-tbody > tr > td {
-    /* white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    max-width: 150px; */
+.ui-table .ui-table-tbody>tr>th {
+    background-color: black !important;
+}
+
+.ui-table-thead {
+    background-color: black !important;
+}
+.ui-datatable .ui-datatable-thead > tr > th {
+    
 }

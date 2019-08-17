@@ -33,3 +33,7 @@ p-dropdown {
     text-overflow: ellipsis;
     max-width: 150px;
 }
+
+.ticket-tb-header {
+    background-color: black;
+}

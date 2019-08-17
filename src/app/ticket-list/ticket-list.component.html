@@ -16,7 +16,7 @@
     <div class="tickets-data">
         <p-table [value]="ticket_list" [paginator]="true" [rows]="15" [responsive]="true" [loading]="loading">
             <ng-template pTemplate="header">
-                <tr>
+                <tr class="ticket-tb-header">
                     <th pSortableColumn="code">Code
                         <p-sortIcon field="code" ariaLabel="Activate to sort"
                             ariaLabelDesc="Activate to sort in descending order"
