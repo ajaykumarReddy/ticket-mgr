@@ -17,9 +17,27 @@ nav {
     top: 70px;
 }
 
-.logo_img{
+.logo_img {
     width: 200px;
     height: 60px;
     margin-left: 10px;
     background-color: azure;
+}
+
+.menu-items {
+    display: flex;
+    align-items: center;
+}
+
+.nav-bar ul {
+    list-style: none;
+}
+
+
+.nav-bar ul li {
+    margin-right: 10px;
+    cursor: pointer;
+    border: none;
+    outline: none;
+    color: #fff;
 }

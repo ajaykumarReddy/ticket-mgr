@@ -34,7 +34,7 @@
             <td>
                 <label class="td-label">Trip Duration: </label>
                 <span *ngIf="!isEdit">{{ticket.duration}}</span>
-                <p-dropdown *ngIf="isEdit" [options]="duration" [(ngModel)]="ticket.duration" ></p-dropdown>
+                <p-dropdown *ngIf="isEdit" [options]="duration" [(ngModel)]="ticket.duration"></p-dropdown>
             </td>
         </tr>
         <tr>
@@ -61,11 +61,13 @@
             </td>
         </tr>
         <footer>
-            <button pButton type="button" (click)="gotoTicketList()" label="Back"
-                class="ui-button-secondary ui-button-rounded" style="margin-right: 5px;"></button>
-            <button *ngIf="!isEdit" (click)="isEdit=true;" pButton type="button" label="Edit"></button>
-            <button *ngIf="isEdit" (click)="saveTicketDetails(ticket); isEdit = false;" pButton type="button"
-                label="Save" class="ui-button-rounded"></button>
+            <div class="ui-toolbar-group-left">
+                    <button pButton type="button" (click)="gotoTicketList()" label="Back"
+                    class="ui-button-secondary ui-button-rounded" icon="pi pi-arrow-circle-left" style="margin-right: 5px;"></button>
+                <button *ngIf="!isEdit" (click)="isEdit=true;" pButton type="button" label="Edit" icon="pi pi-user-edit" class="ui-button-success"></button>
+                <button *ngIf="isEdit" (click)="saveTicketDetails(ticket); isEdit = false;" pButton type="button"
+                    label="Save"  icon="pi pi-save" class="ui-button-success"></button>
+            </div>
         </footer>
     </table>
 </div>
