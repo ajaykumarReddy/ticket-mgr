@@ -26,7 +26,7 @@
         </tr>
         <tr>
             <td>
-                <label class="td-label">Trip Start Date:</label>
+                <label style="margin-right: 5px" class="td-label">Trip Start Date:</label>
                 <span *ngIf="!isEdit">{{ticket.start_date}}</span>
                 <input *ngIf="isEdit" name="startDate" type="date" [(ngModel)]="ticket.start_date" pInputText>
 
@@ -34,7 +34,7 @@
             <td>
                 <label class="td-label">Trip Duration: </label>
                 <span *ngIf="!isEdit">{{ticket.duration}}</span>
-                <p-dropdown *ngIf="isEdit" [options]="duration" [(ngModel)]="ticket.duration"></p-dropdown>
+                <p-dropdown *ngIf="isEdit" [options]="duration" [(ngModel)]="ticket.duration" ></p-dropdown>
             </td>
         </tr>
         <tr>

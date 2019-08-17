@@ -6,7 +6,6 @@ import { TableModule } from 'primeng/table';
 import {ToastModule} from 'primeng/toast';
 import {DropdownModule} from 'primeng/dropdown';
 import {ButtonModule} from 'primeng/button';
-import {CalendarModule} from 'primeng/calendar';
 import {InputTextModule} from 'primeng/inputtext';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -34,7 +33,6 @@ import { TicketListComponent } from './ticket-list/ticket-list.component';
     TooltipModule,
     ButtonModule,
     InputTextModule,
-    CalendarModule
   ],
   providers: [MessageService],
   bootstrap: [AppComponent]
